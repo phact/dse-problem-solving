@@ -1,0 +1,5 @@
+#!/bin/bash
+set -x
+
+cd ebdse
+/tmp/ebdse/ebdse -v run type=cql yaml=playerscores tags=phase:schema
