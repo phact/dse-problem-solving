@@ -26,10 +26,14 @@ canonifyurls = true
 
 
 [[menu.main]]
-	name   = "Asset Name"
+	name   = "Problem Solving"
 	url    = "/"
 	weight = 10
 [[menu.main]]
-    name   = "Build and Run"
+    name   = "Player Scores"
+    url    = "playerscores/"
+    weight = 200
+[[menu.main]]
+    name   = "Powertools Example"
     url    = "buildandrun/"
-    weight = 100
+    weight = 900
