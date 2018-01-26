@@ -1,0 +1,67 @@
+# ebdse -v run type=cql yaml=playerscores tags=phase:schema
+bindings:
+  playerid: Mod(<<sources:1000>>);
+  groups: HashedLineToString(data/variable_words.txt)
+  score: compose normal(0.0,5.0); Add(100.0) -> double
+  gameid: compose Mod(<<stations:100>>); ToHashedUUID() -> UUID
+blocks:
+  - tags:
+      phase: schema
+    params:
+      prepared: false
+    statements:
+     - |
+        create KEYSPACE if not exists datastax WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+     - |
+        create-table1> create table if not exists datastax.player_game_history           (
+            playerid text,
+            gameid text,
+            scoredate timestamp,
+            highscore int,
+            PRIMARY KEY ((playerid, gameid), scoredate)
+        ) with clustering order by (scoredate desc);
+     - |
+        create table if not exists datastax.high_scores_groups (
+        gameid text,
+        playerid text,
+        highscore int,
+        scoredate timestamp,
+        groups set<text>,
+        PRIMARY KEY (gameid, playerid)
+        );
+     - |
+        truncate table datastax.high_scores_groups;
+     - |
+        truncate table datastax.player_game_history;
+  - tags:
+      phase: main
+      type: read
+    params:
+      ratio: 1
+      cl: <<read_cl:LOCAL_QUORUM>>
+    statements:
+     - |
+         select-read1> select highscore, groups from datastax.high_scores_groups where gameid = '1' and playerid = '4' ;
+     - |
+         select-read2> select count(*) from datastax.high_scores_groups where solr_query = '{"q":"highscore:[500 TO *]", "fq":"gameid:1"}';
+     - |
+         select-read3> select count(*) from datastax.select count(*) from datastax.high_scores_groups where solr_query = '{"q":"groups:datastaxers AND highscore:[500 TO *]", "fq":"gameid:1"}';
+     - |
+         select-read4> select count(*) from datastax.select count(*) from datastax.high_scores_groups where solr_query = '{"q":"groups:datastaxers AND highscore:500", "fq":"gameid:1"}';
+     - |
+         select-read5> select count(*) from datastax.select count(*) from datastax.high_scores_groups where solr_query = '{"q":"groups:friends AND highscore:[500 TO *]", "fq":"gameid:1"}';
+     - |
+         select-read6> select count(*) from datastax.select count(*) from datastax.high_scores_groups where solr_query = '{"q":"groups:friends AND highscore:500", "fq":"gameid:1"}';
+     - |
+         select-read7> select playerid, highscore from datastax.high_scores_groups where solr_query = '{"q":"groups:datastaxers", "fq":"gameid:1", "sort":"highscore desc"}';
+  - tags:
+      phase: main
+      type: write
+    params:
+      ratio: 9
+      cl: <<write_cl:LOCAL_QUORUM>>
+    statements:
+     - |
+        insert-main1> insert into datastax.high_scores_groups (gameid,playerid, groups) values ('1','1', {});
+     - |
+        insert-main2> insert into datastax.high_scores_groups (gameid,playerid, highscore) values ('1','1', 12313);
