@@ -1,5 +1,5 @@
 languageCode = "en-us"
-title = "Geofinder API"
+title = "Problem Solving"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
@@ -33,6 +33,10 @@ canonifyurls = true
     name   = "Player Scores"
     url    = "playerscores/"
     weight = 200
+[[menu.main]]
+    name   = "Microservices"
+    url    = "microservices/"
+    weight = 300
 [[menu.main]]
     name   = "Powertools Example"
     url    = "buildandrun/"

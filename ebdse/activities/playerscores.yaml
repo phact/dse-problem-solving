@@ -4,7 +4,6 @@ bindings:
   groups: HashedLineToStringSet(data/variable_words.txt,1,3)
   highscore: compose normal(0.0,5.0); Add(100.0); ToInt() -> int
   gameid: compose Mod(<<stations:100>>); LongToString() -> String
-#  solr_query: compose Mod(<<stations:100>>); LongToString(); Prefix('{"q":"highscore:[500 TO *]", "fq":"gameid:'); Suffix('"}') -> String
 blocks:
   - tags:
       phase: schema
@@ -43,8 +42,6 @@ blocks:
       ratio: 1
       cl: <<read_cl:ONE>>
     statements:
-#     - |
-#         select highscore, groups from datastax.high_scores_groups where gameid = ?gameid and playerid = ?playerid ;
      - |
          select count(*) from datastax.high_scores_groups where solr_query = '{"q":"highscore:[500 TO *]", "fq":"gameid:1"}';
      - |
