@@ -6,7 +6,7 @@ The idea is to share experiences across the field team so that real world soluti
 ## How it works
 
 Participating in PSP is totally VOLUNTARY but we know some people in our field team can’t resist a challenge.
-The challenge works as folllows:
+The challenge works as follows:
 
 1. Patrick releases a problem and gives the field a week or two to work on it.
 1. Conversation ensues in the #problem-solving channel on slack
