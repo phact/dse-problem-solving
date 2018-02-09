@@ -10,4 +10,4 @@ menu:
 
 ## Sample Application
 
-<a href=3"https://github.com/PatrickCallaghan/datastax-mailpay" target="_blank">Sample App<a>
+<a href="https://github.com/PatrickCallaghan/datastax-mailpay" target="_blank">Sample App<a>
