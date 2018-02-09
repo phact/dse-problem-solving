@@ -1,8 +1,7 @@
 ---
-date: 2017-05-19T21:52:39
 title: Problem Solving
 type: index
-weight: 0
+weight: 10
 ---
 
 ## Problem Solving with Patrick

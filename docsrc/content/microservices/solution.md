@@ -1,10 +1,12 @@
 ---
-date: 2017-09-07T22:35:05-04:00
-title: Player Scores (Solution)
+title: Microservices (Solution)
 menu:
   main:
-      parent: Player Scores
-      identifier: playerscoressolution
-      weight: 202
+      parent: Microservices
+      identifier: mssolution
+      weight: 302
 ---
 
+## Sample Application
+
+<a href=3"https://github.com/PatrickCallaghan/datastax-mailpay" target="_blank">Sample App<a>

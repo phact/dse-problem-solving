@@ -38,6 +38,14 @@ canonifyurls = true
     url    = "microservices/"
     weight = 300
 [[menu.main]]
+    name   = "Search Partition"
+    url    = "searchpartition/"
+    weight = 400
+[[menu.main]]
+    name   = "Data Deletion"
+    url    = "datadeletion/"
+    weight = 500
+[[menu.main]]
     name   = "Powertools Example"
     url    = "buildandrun/"
     weight = 900
