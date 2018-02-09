@@ -1,5 +1,6 @@
 ---
 title: Data Deletion (Problem)
+weight: 50
 menu:
   main:
       parent: Data Deletion

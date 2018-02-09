@@ -1,5 +1,6 @@
 ---
 title: Search Partition (Problem)
+weight: 40
 menu:
   main:
       parent: Search Partition

@@ -1,5 +1,6 @@
 ---
 title: Player Scores (Problem)
+weight: 20
 menu:
   main:
       parent: Player Scores

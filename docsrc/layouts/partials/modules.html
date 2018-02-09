@@ -1,0 +1,62 @@
+
+    <!-- using-vega? https://github.com/vega/ -->
+    {{ if ($.Scratch.Get "using-vega") }}
+    <script src="{{ .Site.BaseURL }}modules/vega/vega.js"></script>
+    {{ end  }}
+
+    <!-- using-viz? https://github.com/mdaines/viz.js/ -->
+    {{ if ($.Scratch.Get "using-viz") }}
+    <script src="{{ .Site.BaseURL }}modules/viz/viz.js"></script>
+    {{ end }}
+
+    <!-- using-flowchart? https://github.com/adrai/flowchart.js -->
+    {{ if ($.Scratch.Get "using-flowchart") }}
+    <script src="{{ .Site.BaseURL }}modules/flowchart/raphael.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/flowchart/flowchart-latest.js"></script>
+    {{ end }}
+
+    <!-- using-jssequence? https://github.com/bramp/js-sequence-diagrams -->
+    {{ if ($.Scratch.Get "using-jssequence") }}
+    <script src="{{ .Site.BaseURL }}modules/jssequence/webfont.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/jssequence/snap.svg-min.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/jssequence/underscore-min.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/jssequence/sequence-diagram.js"></script>
+    <link href="{{ .Site.BaseURL }}modules/jssequence/sequence-diagram-min.css" rel="stylesheet" />
+    {{ end }}
+
+    <!-- using-jsxgraph? -->
+    {{ if ($.Scratch.Get "using-jsxgraph") }}
+    <link href="{{ .Site.BaseURL }}modules/jsxgraph/jsxgraph.css" type="text/css" rel="stylesheet"/>
+    <script src="{{ .Site.BaseURL }}modules/jsxgraph//jsxgraphcore.js"></script>
+    <!-- using-jsxgraph on this page -->
+    {{ end }}
+
+    <!-- using-mermaidjs? -->
+    {{ if ($.Scratch.Get "using-mermaid") }}
+    <link href="{{ .Site.BaseURL }}modules/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="{{ .Site.BaseURL }}modules/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    {{ end }}
+
+    <!-- using-nomnoml? -->
+    {{ if ($.Scratch.Get "using-nomnoml") }}
+    <script src="{{ .Site.BaseURL }}modules/nomnoml/lodash.min.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/nomnoml/dagre.min.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/nomnoml/skanaar.util.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/nomnoml/skanaar.svg.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/nomnoml/skanaar.vector.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/nomnoml/skanaar.canvas.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/nomnoml/nomnoml.jison.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/nomnoml/nomnoml.parser.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/nomnoml/nomnoml.layouter.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/nomnoml/nomnoml.renderer.js"></script>
+    <script src="{{ .Site.BaseURL }}modules/nomnoml/nomnoml.js"></script>
+    {{ end }}
+    
+    <!-- using-mathjax? -->
+    {{ if ($.Scratch.Get "using-mathjax") }}
+    {{ end }}
+
+    <!-- using-cytoscape? -->
+    {{ if ($.Scratch.Get "using-cytoscape") }}
+    {{ end }}
